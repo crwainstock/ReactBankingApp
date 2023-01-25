@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Box from "./Components/Box";
 
 const starterItems = [
   {
@@ -37,7 +38,7 @@ function App() {
   }
 
   function addItem() {
-    newItem.id = setId(() => id + 1);
+    // newItem.id = setId(() => id + 1); NOT WORKING.
     // newItem.id = items.length + 1;
     setItems((items) => [...items, newItem]);
   }
@@ -51,6 +52,13 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>My Banking App</h1>
+
+        <div className="row mb-4">
+          <Box title="income" amountToShow="{income}" />
+          <Box title="expenses" amountToShow="{expenses}" />
+          <Box title="balance" amountToShow="{balance}" />
+        </div>
+
         <div>
           <input
             type="text"
