@@ -73,7 +73,9 @@ function App() {
                 key={item.id}
                 className="list-group-item d-flex align-item-center justify-content-between"
               >
-                <span onClick={() => deleteItem(item.id)}>X</span>
+                <span onClick={() => deleteItem(item.id)}>
+                  <button>X</button>
+                </span>
                 <span>
                   {item.name}
                   {item.id}
