@@ -42,7 +42,7 @@ function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
             onChange={handleChange}
           />
         </div>
-        <div className="col-1 mt-auto">
+        <div id="formSubmit" className="col-1 mt-auto">
           <button
             onClick={() => onAdd(newItem)}
             className="btn btn-info btn-sm "
