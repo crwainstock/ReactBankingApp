@@ -102,8 +102,8 @@ function App() {
                     <span
                       className={
                         item.amount > 0
-                          ? "text-success pull-right"
-                          : "text-danger pull-right"
+                          ? "positive pull-right"
+                          : "negative pull-right"
                       }
                     >
                       {item.amount}

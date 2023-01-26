@@ -4,15 +4,35 @@
   text-align: center;
   font-family: "Noto Sans", sans-serif;
 }
-
+.positive {
+  color: #52b788;
+}
+.negative {
+  color: #b7094c;
+}
 #formSubmit .btn {
   height: 50%;
   width: 150%;
+  background-color: #ffafcc;
+  border-color: #ffafcc;
+  color: #fffaff;
+}
+#formSubmit .btn:hover {
+  background-color: #ffc8dd;
+}
+
+#box-card h4 {
+  color: #a2d2ff;
 }
 
 h1 {
+  color: #cdb4db;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px #bde0fe;
+}
+label {
+  color: #cdb4db;
 }
 #searchBar {
   margin: 0 auto;
