@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Box from "./Components/Box";
+import Form from "./Components/Form";
 
 const starterItems = [
   {
@@ -74,21 +75,7 @@ function App() {
           <Box title="Balance" amountToShow={balance} />
         </div>
 
-        <div>
-          <input
-            type="text"
-            name="name"
-            value={newItem.name}
-            onChange={handleChange}
-          />
-          <input
-            type="number"
-            name="amount"
-            value={newItem.amount}
-            onChange={handleChange}
-          />
-          <button onClick={addItem}>Add</button>
-        </div>
+        <Form />
         <div>
           <ul className="mt-4 list-group">
             {items.map((item) => (
