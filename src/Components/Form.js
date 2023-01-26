@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../App.css";
 
-function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
+function Form({ onAdd }) {
   const [newItem, setNewItem] = useState({
     name: "",
     amount: 0,
@@ -22,7 +22,7 @@ function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
       <div className="row d-flex justify-content-center">
         <div id="nameInput" className="col-4">
           <label forHTML="name" className="form-label">
-            Name of Transaction
+            <h5>Name of Transaction</h5>
           </label>
           <input
             type="text"
@@ -33,7 +33,7 @@ function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
         </div>
         <div id="amountInput" className="col-4">
           <label forHTML="amount" className="form-label">
-            Amount
+            <h5>Amount</h5>
           </label>
           <input
             type="number"
