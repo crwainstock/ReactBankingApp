@@ -34,9 +34,16 @@ function App() {
 
   function addItem(itemCreated) {
     // newItem.id = setId(() => id + 1); NOT WORKING - can you do something with previousState?
-    itemCreated.id = items.length + 1; //Not ideal. Need to change.
+    // itemCreated.id = items.length + 1; //Not ideal. Need to change.
+    createId(); //incrementing id
+    console.log(id);
     setItems((items) => [...items, itemCreated]);
   }
+
+  function createId() {
+    setId(id + 1);
+  }
+
   //ID is a local variable here. You can call it anything.
   function deleteItem(ID) {
     let newArray = items.filter((item) => item.id !== ID);
