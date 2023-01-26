@@ -18,9 +18,9 @@ function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div id="nameInput" className="col">
+    <div className="container d-flex justify-content-center">
+      <div className="row d-flex justify-content-center">
+        <div id="nameInput" className="col-4">
           <label forHTML="name" className="form-label">
             Name of Transaction
           </label>
@@ -31,7 +31,7 @@ function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
             onChange={handleChange}
           />
         </div>
-        <div id="amountInput" className="col">
+        <div id="amountInput" className="col-4">
           <label forHTML="amount" className="form-label">
             Amount
           </label>
@@ -42,9 +42,14 @@ function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
             onChange={handleChange}
           />
         </div>
-        <button onClick={() => onAdd(newItem)} className="btn btn-info">
-          Add
-        </button>
+        <div className="col-1 mt-auto">
+          <button
+            onClick={() => onAdd(newItem)}
+            className="btn btn-info btn-sm "
+          >
+            Add
+          </button>
+        </div>
       </div>
     </div>
   );
