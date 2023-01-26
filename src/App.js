@@ -71,7 +71,10 @@ function App() {
         />
         <div>
           <div className="container">
-            <div className="d-flex mt-4">
+            <div
+              id="searchBar"
+              className="row d-flex justify-content-center w-50 p-3"
+            >
               <input
                 type="text"
                 placeholder="Search ..."
