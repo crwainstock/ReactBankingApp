@@ -25,7 +25,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // const [id, setId] = useState(0);
+  const [id, setId] = useState(4);
 
   //This is where external data can be loaded - fetch from API, etc.
   useEffect(() => {
