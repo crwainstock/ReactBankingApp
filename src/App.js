@@ -69,9 +69,9 @@ function App() {
         <h1>My Banking App</h1>
 
         <div className="row mb-4">
-          <Box title="income" amountToShow={income} />
-          <Box title="expenses" amountToShow={expenses} />
-          <Box title="balance" amountToShow={balance} />
+          <Box title="Income" amountToShow={income} />
+          <Box title="Expenses" amountToShow={expenses} />
+          <Box title="Balance" amountToShow={balance} />
         </div>
 
         <div>
