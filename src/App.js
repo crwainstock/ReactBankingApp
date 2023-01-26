@@ -32,6 +32,8 @@ function App() {
     setItems(starterItems);
   }, []);
 
+  // createId((prevId) => items.id + 1); I don't know.
+
   function addItem(itemCreated) {
     itemCreated.id = items.length + 1; //Not ideal. Need to change.
     setItems((items) => [...items, itemCreated]);
