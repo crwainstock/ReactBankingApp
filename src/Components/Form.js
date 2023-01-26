@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../App.css";
 
 function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
   const [newItem, setNewItem] = useState({
@@ -17,22 +18,34 @@ function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
   }
 
   return (
-    <div className="d-flex mt-4">
-      <input
-        type="text"
-        name="name"
-        value={newItem.name}
-        onChange={handleChange}
-      />
-      <input
-        type="number"
-        name="amount"
-        value={newItem.amount}
-        onChange={handleChange}
-      />
-      <button onClick={() => onAdd(newItem)} className="btn btn-info">
-        Add
-      </button>
+    <div className="container">
+      <div className="row">
+        <div id="nameInput" className="col">
+          <label forHTML="name" className="form-label">
+            Name of Transaction
+          </label>
+          <input
+            type="text"
+            name="name"
+            value={newItem.name}
+            onChange={handleChange}
+          />
+        </div>
+        <div id="amountInput" className="col">
+          <label forHTML="amount" className="form-label">
+            Amount
+          </label>
+          <input
+            type="number"
+            name="amount"
+            value={newItem.amount}
+            onChange={handleChange}
+          />
+        </div>
+        <button onClick={() => onAdd(newItem)} className="btn btn-info">
+          Add
+        </button>
+      </div>
     </div>
   );
 }
