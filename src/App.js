@@ -35,7 +35,7 @@ function App() {
   // createId((prevId) => items.id + 1); I don't know.
 
   function addItem(itemCreated) {
-    itemCreated.id = items.length + 1; //Not ideal. Need to change.
+    itemCreated.id = Date.now();
     setItems((items) => [...items, itemCreated]);
   }
 
@@ -97,7 +97,9 @@ function App() {
                     <span onClick={() => deleteItem(item.id)}>
                       <button className="btn btn-light pull-left">X</button>
                     </span>
-                    <span>{item.name}</span>
+                    <span>
+                      {item.name} {item.id}
+                    </span>
                     <span
                       className={
                         item.amount > 0
