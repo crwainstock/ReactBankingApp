@@ -17,6 +17,15 @@ function Form({ onAdd }) {
     console.log(newObject);
   }
 
+  function handleSubmit() {
+    //Could I create & add id to newItem here?
+    //onAdd sends new item info back to parent
+    onAdd(newItem);
+    console.log(newItem);
+    //clear input fields
+    setNewItem({ name: "", amount: 0 });
+  }
+
   return (
     <div className="container d-flex justify-content-center">
       <div className="row d-flex justify-content-center">
@@ -43,10 +52,7 @@ function Form({ onAdd }) {
           />
         </div>
         <div id="formSubmit" className="col-1 mt-auto">
-          <button
-            onClick={() => onAdd(newItem)}
-            className="btn btn-info btn-sm "
-          >
+          <button onClick={handleSubmit} className="btn btn-info btn-sm ">
             Add
           </button>
         </div>
