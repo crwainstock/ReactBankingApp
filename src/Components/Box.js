@@ -1,3 +1,5 @@
+import "../App.css"; //I don't think we need this here, but the styling isn't working on the box components for some reason...
+
 function Box({ title, amountToShow }) {
   return (
     <div className="col">
