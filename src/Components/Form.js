@@ -19,6 +19,7 @@ function Form({ onAdd }) {
 
   function handleSubmit() {
     //Could I create & add id to newItem here?
+
     //onAdd sends new item info back to parent
     onAdd(newItem);
     console.log(newItem);

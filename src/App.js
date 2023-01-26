@@ -25,7 +25,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [id, setId] = useState(4);
+  // const [id, setId] = useState(4);
 
   //This is where external data can be loaded - fetch from API, etc.
   useEffect(() => {
@@ -33,15 +33,8 @@ function App() {
   }, []);
 
   function addItem(itemCreated) {
-    // newItem.id = setId(() => id + 1); NOT WORKING - can you do something with previousState?
-    // itemCreated.id = items.length + 1; //Not ideal. Need to change.
-    createId(); //incrementing id
-    console.log(id);
+    itemCreated.id = items.length + 1; //Not ideal. Need to change.
     setItems((items) => [...items, itemCreated]);
-  }
-
-  function createId() {
-    setId(id + 1);
   }
 
   //ID is a local variable here. You can call it anything.
@@ -102,10 +95,7 @@ function App() {
                     <span onClick={() => deleteItem(item.id)}>
                       <button className="btn btn-light pull-left">X</button>
                     </span>
-                    <span>
-                      {item.name}
-                      {item.id}
-                    </span>
+                    <span>{item.name}</span>
                     <span
                       className={
                         item.amount > 0
