@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Form({ onAdd, searchTerm, setNewSearchTerm }) {
+function Form({ onAdd, searchTerm, setNewSearchTerm, setItems }) {
   const [newItem, setNewItem] = useState({
     name: "",
     amount: 0,
@@ -12,11 +12,12 @@ function Form({ onAdd, searchTerm, setNewSearchTerm }) {
 
     let newObject = { ...newItem, [name]: value };
     setNewItem(newObject);
+
     console.log(newObject);
   }
 
   return (
-    <div>
+    <div className="d-flex mt-4">
       <input
         type="text"
         name="name"
@@ -29,7 +30,9 @@ function Form({ onAdd, searchTerm, setNewSearchTerm }) {
         value={newItem.amount}
         onChange={handleChange}
       />
-      <button onClick={() => onAdd(newItem)}>Add</button>
+      <button onClick={() => onAdd(newItem)} className="btn btn-info">
+        Add
+      </button>
     </div>
   );
 }
