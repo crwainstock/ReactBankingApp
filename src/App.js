@@ -26,7 +26,7 @@ function App() {
     name: "",
     amount: 0,
   });
-  const [id, setId] = useState(0);
+  // const [id, setId] = useState(0);
 
   //This is where external data can be loaded - fetch from API, etc.
   useEffect(() => {
@@ -42,10 +42,10 @@ function App() {
     console.log(newObject);
   }
 
-  function addItem() {
+  function addItem(itemCreated) {
     // newItem.id = setId(() => id + 1); NOT WORKING - can you do something with previousState?
-    // newItem.id = items.length + 1;
-    setItems((items) => [...items, newItem]);
+    newItem.id = items.length + 1; //Not ideal. Need to change.
+    setItems((items) => [...items, itemCreated]);
   }
   //ID is a local variable here. You can call it anything.
   function deleteItem(ID) {
@@ -69,9 +69,9 @@ function App() {
         <h1>My Banking App</h1>
 
         <div className="row mb-4">
-          <Box title="income" amountToShow="{income}" />
-          <Box title="expenses" amountToShow="{expenses}" />
-          <Box title="balance" amountToShow="{balance}" />
+          <Box title="income" amountToShow={income} />
+          <Box title="expenses" amountToShow={expenses} />
+          <Box title="balance" amountToShow={balance} />
         </div>
 
         <div>
