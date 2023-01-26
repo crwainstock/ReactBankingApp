@@ -83,29 +83,33 @@ function App() {
               />
             </div>
             <ul className="mt-4 list-group">
-              {items.map((item) => (
-                <li
-                  key={item.id}
-                  className="list-group-item d-flex align-item-center justify-content-between"
-                >
-                  <span onClick={() => deleteItem(item.id)}>
-                    <button className="btn btn-light pull-left">X</button>
-                  </span>
-                  <span>
-                    {item.name}
-                    {item.id}
-                  </span>
-                  <span
-                    className={
-                      item.amount > 0
-                        ? "text-success pull-right"
-                        : "text-danger pull-right"
-                    }
+              {items
+                .filter((item) =>
+                  item.name.toLowerCase().includes(searchTerm.toLowerCase())
+                )
+                .map((item) => (
+                  <li
+                    key={item.id}
+                    className="list-group-item d-flex align-item-center justify-content-between"
                   >
-                    {item.amount}
-                  </span>
-                </li>
-              ))}
+                    <span onClick={() => deleteItem(item.id)}>
+                      <button className="btn btn-light pull-left">X</button>
+                    </span>
+                    <span>
+                      {item.name}
+                      {item.id}
+                    </span>
+                    <span
+                      className={
+                        item.amount > 0
+                          ? "text-success pull-right"
+                          : "text-danger pull-right"
+                      }
+                    >
+                      {item.amount}
+                    </span>
+                  </li>
+                ))}
             </ul>
           </div>
         </div>
